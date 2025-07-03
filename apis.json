@@ -1,0 +1,185 @@
+{
+  "api_providers": [
+    {
+      "name": "FRED",
+      "type": "Institutional",
+      "cost_model": "Free",
+      "api_key_required": true,
+      "authentication_method": "API Key in URL",
+      "api_standard": "REST",
+      "data_formats": ["JSON", "XML"],
+      "documented_rate_limit": "120 requests/minute",
+      "data_coverage": "Over 200,000 U.S. and international economic time series (GDP, CPI, unemployment, interest rates)",
+      "developer_experience_rating": "Excellent",
+      "unique_features": ["ALFRED (vintage data)", "Extensive documentation and third-party libraries"]
+    },
+    {
+      "name": "World Bank",
+      "type": "Institutional",
+      "cost_model": "Free",
+      "api_key_required": false,
+      "authentication_method": "None",
+      "api_standard": "REST",
+      "data_formats": ["JSON", "XML", "Excel"],
+      "documented_rate_limit": "Not specified",
+      "data_coverage": "Nearly 16,000 time series indicators from over 45 databases (WDI - GDP, GNI per capita, population, inflation, poverty)",
+      "developer_experience_rating": "Good",
+      "unique_features": ["No API key needed", "Data Catalog API for discovery"]
+    },
+    {
+      "name": "IMF",
+      "type": "Institutional",
+      "cost_model": "Free",
+      "api_key_required": true,
+      "authentication_method": "Portal Account Login",
+      "api_standard": "SDMX",
+      "data_formats": ["SDMX-JSON", "SDMX-XML", "JSON (DataMapper)"],
+      "documented_rate_limit": "Not specified (community suggests limits)",
+      "data_coverage": "Global financial stability, international trade, macroeconomic performance (WEO, IFS, Fiscal Monitor - GDP, exchange rates, CPI, balance of payments)",
+      "developer_experience_rating": "Moderate to advanced",
+      "unique_features": ["SDMX standard for rich metadata", "DataMapper API for direct time series"]
+    },
+    {
+      "name": "OECD",
+      "type": "Institutional",
+      "cost_model": "Free",
+      "api_key_required": false,
+      "authentication_method": "None",
+      "api_standard": "SDMX-JSON",
+      "data_formats": ["JSON", "XML", "CSV"],
+      "documented_rate_limit": "20 downloads/hour",
+      "data_coverage": "High-quality, comparative statistics for member countries (national accounts, finance, employment, health, environment - unemployment, CPI)",
+      "developer_experience_rating": "Good",
+      "unique_features": ["API query builder on website", "Proactive best practices guidance for caching"]
+    },
+    {
+      "name": "ECB",
+      "type": "Institutional",
+      "cost_model": "Free",
+      "api_key_required": true,
+      "authentication_method": "Portal Account Login (may be prerequisite)",
+      "api_standard": "SDMX",
+      "data_formats": ["SDMX-XML", "CSV"],
+      "documented_rate_limit": "Not specified",
+      "data_coverage": "Monetary policy, financial stability, macroeconomic statistics for Euro area (policy interest rates, exchange rates, HICP inflation, GDP)",
+      "developer_experience_rating": "Moderate to advanced",
+      "unique_features": ["Definitive source for Euro area data", "Client libraries available"]
+    },
+    {
+      "name": "Bank of England",
+      "type": "Institutional",
+      "cost_model": "Free",
+      "api_key_required": false,
+      "authentication_method": "None",
+      "api_standard": "Legacy URL-based download",
+      "data_formats": ["CSV", "Excel", "XML"],
+      "documented_rate_limit": "Not applicable (file download system)",
+      "data_coverage": "UK-specific data (interest rates, exchange rates, money and credit, financial market data)",
+      "developer_experience_rating": "Requires more development effort (file parsing)"
+    },
+    {
+      "name": "BoJ (via Nasdaq Data Link)",
+      "type": "Aggregator",
+      "cost_model": "Free (via Nasdaq Data Link)",
+      "api_key_required": true,
+      "authentication_method": "Nasdaq Data Link API Key",
+      "api_standard": "REST",
+      "data_formats": ["JSON", "XML", "CSV"],
+      "documented_rate_limit": "Varies by Nasdaq plan",
+      "data_coverage": "Japanese interest rates, money supply, TANKAN business survey, price indices, balance of payments (over 142,000 time-series)",
+      "developer_experience_rating": "Practical and efficient via aggregator"
+    },
+    {
+      "name": "Stats NZ",
+      "type": "Institutional",
+      "cost_model": "Free",
+      "api_key_required": true,
+      "authentication_method": "Ocp-Apim-Subscription-Key header",
+      "api_standard": "REST",
+      "data_formats": ["Not specified (likely JSON)"],
+      "documented_rate_limit": "Throttling in place",
+      "data_coverage": "New Zealand statistics (CPI, FPI, labor market, GDP, population, international trade)",
+      "developer_experience_rating": "Modern API Portal"
+    },
+    {
+      "name": "DBnomics",
+      "type": "Aggregator",
+      "cost_model": "Free",
+      "api_key_required": false,
+      "authentication_method": "None",
+      "api_standard": "REST",
+      "data_formats": ["JSON"],
+      "documented_rate_limit": "Not specified (permissive)",
+      "data_coverage": "Over 1.2 billion time series from dozens of global and national institutions (IMF, Eurostat, ECB, OECD, BIS etc.)",
+      "developer_experience_rating": "Excellent",
+      "unique_features": ["Open-source, non-profit", "Time series alignment (NA values for gaps)", "Unified access point"]
+    },
+    {
+      "name": "EOD Historical Data (EODHD)",
+      "type": "Aggregator",
+      "cost_model": "Freemium",
+      "api_key_required": true,
+      "authentication_method": "API Key in URL",
+      "api_standard": "REST",
+      "data_formats": ["JSON", "CSV"],
+      "documented_rate_limit": "Free: 20 calls/day; Paid: 100,000+ calls/day (10 API calls per macro indicator request)",
+      "data_coverage": "Macro Indicators API (over 30 key indicators: GDP, inflation, unemployment, historical data back to 1960)",
+      "developer_experience_rating": "Standard REST API, paid tiers are viable"
+    },
+    {
+      "name": "Finnworlds",
+      "type": "Aggregator",
+      "cost_model": "Paid",
+      "api_key_required": true,
+      "authentication_method": "API Key in URL",
+      "api_standard": "REST",
+      "data_formats": ["JSON", "XML", "CSV", "PDF"],
+      "documented_rate_limit": "Paid: Starts at 15 calls/minute (10,000 calls/month)",
+      "data_coverage": "Macroeconomic Data API (198 countries: GDP, CPI, interest rates), Economic Calendar API",
+      "developer_experience_rating": "Standard REST API"
+    },
+    {
+      "name": "Financial Modeling Prep (FMP)",
+      "type": "Aggregator",
+      "cost_model": "Freemium",
+      "api_key_required": true,
+      "authentication_method": "API Key in URL",
+      "api_standard": "REST",
+      "data_formats": ["JSON"],
+      "documented_rate_limit": "Varies by plan",
+      "data_coverage": "Economic Indicators API (real-time and historical: GDP, unemployment, inflation)",
+      "developer_experience_rating": "Standard REST API, specific free plan limits not detailed"
+    }
+  ],
+  "strategic_recommendations": {
+    "general_architecture": "Hybrid, multi-source data strategy to ensure resilience and leverage strengths of different provider types. Implement a robust caching layer for performance and to respect rate limits.",
+    "us_focused_dashboard_stack": {
+      "primary": "FRED",
+      "secondary_global_context": "World Bank"
+    },
+    "global_g20_dashboard_stack": {
+      "primary": "DBnomics",
+      "secondary_augmentations": [
+        "FRED (for U.S. critical data)",
+        "Nasdaq Data Link's free BOJ feed (for Japan)",
+        "Low-cost commercial aggregator (e.g., EODHD) for specific gaps"
+      ]
+    },
+    "currencies_interest_rates_dashboard_stack": {
+      "primary_direct_connections": [
+        "ECB API (Euro area rates)",
+        "FRED API (U.S. rates)",
+        "Bank of England's file download system (UK rates)",
+        "Bank of Japan feed via Nasdaq Data Link"
+      ],
+      "secondary_commercial_aggregator": "Finnworlds or EODHD (for obscure benchmark rates or smaller countries)"
+    },
+    "best_practices": [
+      "Utilize client libraries for SDMX-based APIs (e.g., rdbnomics, OECD package, ecbdata)",
+      "Implement caching for rate-limited APIs (e.g., OECD data cached for 1 hour)",
+      "Develop file-parsing modules for legacy sources (e.g., Bank of England)",
+      "Account for API key requirements and authentication methods",
+      "Be aware of and design for documented and undocumented rate limits"
+    ]
+  }
+}
